@@ -4,8 +4,6 @@
           <Navbar />
           <BookList />
           <ThemeToggle />
-        </AuthContextProvider>
-      </ThemeContextProvider>
 =====================================
 <ThemContextProvider> class
   ThemeContext = createContext();
