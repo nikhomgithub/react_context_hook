@@ -1,9 +1,0 @@
-<App> func 
-  <NewForm> func
-    [name,setName],[lastname,setLastname],[id,setId] = useState()
-    ref1,ref1,ref3 = useRef()
-    useEffect()[]=> ref1.current.focus()
-    
-    return
-      <h1>
-        <Input> => <inpu>
