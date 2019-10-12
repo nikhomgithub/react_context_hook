@@ -1,0 +1,52 @@
+<App> func
+  <songlist> func
+     [songs {title,artist,id}, setSongs]=useState()
+     [age,setAge]=useState()
+     addsong()=>{ setSong }
+     
+     <TimerClass>
+     <TimerHook>
+     <ul> songs.map
+                song=> <li>id,title,artist
+     <NewSongForm addSong()>
+     <button ()=>setAge>
+     
+======================================================
+<TimerClass> class
+  $timer
+  componentDidMount()=> setInterval($timer+1,1000)
+  componentWillUnmount()=> clearInterval 
+  render()=> 
+    <h1>$timer
+    <button ()=>clearInterval>
+======================================================
+<TimerHook> func
+  [timer,setTimer] = useState()
+  intervalRef = useRef()
+  useEffect()[$timer] 
+    setInterval($timer+1,1000)=intervalRef   
+    clearInterval(intervalRef)
+  return
+    <h1>$timer
+    <button> clearInterval(intervalRef)
+======================================================
+<NewSongForm> func
+  titleRef,artistRef,submitRef=useRef()
+  [title, setTitle] = useState('')
+  [artist, setArtist] = useState('')
+  useEffect()[] => titleRef.current.focus()
+  
+  return
+    <form>
+      <input titleRef setTitle(e.target.value) "Enter" =>artistRef.current.focus() >
+      <input artistRef setArtist(e.target.value) "Enter" => submitRef.current.focus()
+      <button addSong > 
+========================================================      
+      
+      
+      
+      
+      
+      
+      
+      
