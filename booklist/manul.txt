@@ -1,0 +1,59 @@
+ <App>
+      <BookContextProvider>
+        <Navbar/>
+        <BookForm/>
+        <BookList/>
+      <SongContextProvider>
+        <SongForm/>
+        <SongList/>
+===================================
+<BookContextProvider>
+  BookContext = createContext()
+  BookContextProvider = (props) =>(
+    [books,setBooks],[aBook,setABook]=useState()
+    addBook=(title,author,id)=> setBook
+    removeBook =(id)=> setBook
+    selectBook =(id)=> setABook 
+    return
+       <BookContext.Provider value={{books,addBook,removeBook,selectBook,sBook}}>
+            {props.children}
+====================================
+<SongContextProvider>
+  SongContext = createContext()
+  
+  SongContextProvider = (props) =>(
+    songReducer = (state,action)
+      switch(action.type)
+        case 'ADD_SONG' 
+          return [...state,{title,author,id}
+        case 'REMOVE_SONG'
+          return state.filter
+  
+    [songs,dispatch] = useReducer(songReducer,[],()=>{
+        localData= localStorage.getItem('songs')
+    useEffect,[songs] 
+        localStorage.setItem
+    return  
+        <SongContext.Provider value={{songs,dispatch}}>
+            {props.children}
+=============================================
+
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
