@@ -1,4 +1,4 @@
- <App>
+ <App> func
       <BookContextProvider>
         <Navbar/>
         <BookForm/>
@@ -7,7 +7,7 @@
         <SongForm/>
         <SongList/>
 ===================================
-<BookContextProvider>
+<BookContextProvider> func 
   BookContext = createContext()
   BookContextProvider = (props) =>(
     [books,setBooks],[aBook,setABook]=useState()
@@ -18,7 +18,7 @@
        <BookContext.Provider value={{books,addBook,removeBook,selectBook,sBook}}>
             {props.children}
 ====================================
-<SongContextProvider>
+<SongContextProvider> func 
   SongContext = createContext()
   
   SongContextProvider = (props) =>(
@@ -37,13 +37,39 @@
         <SongContext.Provider value={{songs,dispatch}}>
             {props.children}
 =============================================
-
-
+<Navbar> func
+  {books,aBook}=useContext(BookContext)
+  return
+    <h2>aBook.id
+    <p>books.length
+=============================================
+<BookForm> func
+  ref1,ref2,ref3=useRef()
+  [title,setTitle],[author,setAuthor],[id,setId]=useState()
+  {addBook,sBook}=useContext(BookContext)
+  useEffect()[] => ref1.current.focus()
+  useEffect()[id] => addbook(title,author,id) 
             
-            
-            
-            
-            
+  return
+   <form>
+    <input ref1 onKeyDown=>ref2.current.focus() onChange={e=>setTitle(e.target.value)>
+    <input ref2 onKeyDown=>ref3.current.focus(); onChange={e=>setAuthor(e.target.value)>
+    <button ref3 onKeyDown=> ref1.current.focus(), setId(random.id)      
+=============================================
+<BookList> func
+   {books,removeBook,selectBook} = useContext(BookContext)
+   return
+    <ul>books.map=>book
+                <BookDetail book,removebook,selectbook> 
+==============================================
+<BookDetail> func
+   {book,removeBook,selectBook}=props
+     <p onClick={(e)=>removeBook(book.id)} >x
+     <li onClick={(e)=>selectBook(book.id)} >
+==============================================
+<SongForm>   === <BookForm>
+<SongList>   === <BookList>
+<SongDetail> === <BookDetail>
             
             
             
