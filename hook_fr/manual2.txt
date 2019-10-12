@@ -1,0 +1,21 @@
+<App> func
+  <NewForm> func
+    [name,setName],[lastname,setLastname],[id,setId] = useState()
+    ref1,ref2,ref3=useRef()
+    useEffect()[]=>ref1.current.focus()
+    
+    return 
+    <Input ref1  onKeyDown=>ref2.current.focus()  onChange=>setName(e.target.value)>
+    <Input ref2  onKeyDown=>ref3.current.focus()  onChange=>setLastname(e.target.value)>
+    <Input ref3 onKeyDown=>alert('All Done') onChange=>setId(e.target.value) > 
+===============================================
+<input  func
+     ref={ref}
+     type={type}
+     onKeyDown={onKeyDown}
+     placeholder={placeholder}
+     onChange={onChange}
+     value={value}
+/>
+const forwardFromInput = React.forwardRef(Input)
+export default forwardInput;
