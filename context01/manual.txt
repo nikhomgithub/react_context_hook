@@ -1,0 +1,68 @@
+<App> func 
+      <ThemeContextProvider>
+        <AuthContextProvider>
+          <Navbar />
+          <BookList />
+          <ThemeToggle />
+        </AuthContextProvider>
+      </ThemeContextProvider>
+=====================================
+<ThemContextProvider> class
+  ThemeContext = createContext();
+  
+  ThemContextProvider
+    state= isLightTheme
+           light {syntax,ui,bg}
+           dard {syntax,ui,bg}
+    toggleTheme = () => setState
+    return
+      <ThemeContext.Provider value={{...this.state, toggleTheme:this.toggleTheme}}>
+         {this.props.children}
+=======================================
+<AuthContextProvider> class
+  AuthContext = createContext();
+  ThemeContextProvider
+    state = isAuth
+    toggleAuth = () => setState
+    return
+      <AuthContext.Provider value={{...this.state, toggleAuth:this.toggleAuth}}>
+            {this.props.children}
+========================================
+<Navbar> class       
+  <AuthContext.Consumer>{(authcontext)=>(
+      <ThemeContext.Consumer>{(themecontext)=>{
+         {isAuth,toggleAuth} = authcontext
+         {isLightTheme,light,dark} = themecontext
+         theme = isLightTheme?light:dark
+         
+         return
+            <nav>
+              <div> isAuth? 'Logged In' : 'Logged Out'
+              <ul>  
+                <li onClick={toggleAuth}>
+=========================================
+<BookList> class
+  static contextType = ThemeContext
+  {isLightTheme,light,dark} = this.context
+  theme= isLightTheme ?light:dark;
+  return
+    <div>
+      <ul>
+        <li>
+==========================================
+<ThemeToggle> class
+  static contextType = ThemeContext
+  {toggleTheme} = this.context
+  return
+    <button onClick={toggleTheme}>
+  
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
