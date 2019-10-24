@@ -22,3 +22,16 @@ const TimerHook = () => {
 }
  
 export default TimerHook;
+
+/*
+setTimeout or setInterval is a function 
+
+We can name function as "a"
+
+const a = setTimeout(()=>{console.log("ok"},9000) 
+
+you can cancel a() before it exec by
+
+clearTimeout(a);
+
+*/
