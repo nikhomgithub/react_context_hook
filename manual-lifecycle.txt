@@ -1,0 +1,31 @@
+componentDidMount
+run once when the component is mounted
+useEffect(()=>{
+  //code here
+},[]);
+
+
+
+when state change // called on every render of the component
+useEffect(() => {
+  //code here
+});
+
+
+
+componentWillUnmount is use for cleanup (like removing event listners, cancel the timer etc)
+componentDidMount() {
+  window.addEventListener('mousemove', () => {})
+}
+componentWillUnmount() {
+  window.removeEventListener('mousemove', () => {})
+}
+
+useEffect(() => {
+  window.addEventListener('mousemove', () => {});
+
+  // returned function will be called on component unmount 
+  return () => {
+    window.removeEventListener('mousemove', () => {})
+  }
+}, [])
