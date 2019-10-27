@@ -1,0 +1,47 @@
+import react,{createContext,useState} from 'react';
+
+const AgeContext = createContext();
+
+const AgeContextProvider = (props) => {
+  const [age, setAge] = useState(20);
+  const addFiveToAge = setAge(age+5);
+  const addTenToAge = setAge(age+10);
+  return(
+    <AgeContext.Provider value={age,addFiveToAge,addTenToAge}>
+      {props.children}
+    </AgeContext.Provider>
+  )
+}
+//===============================
+import react,{createContext,useState} from 'react';
+
+const AgeContext = createContext();
+
+const ageReducer = (state,action) => {
+  switch(action.type){
+    case 'ADD_FIVE':
+      return state+5;
+    case 'ADD_TEN':
+      return state+10;
+    case 'ADD_NUM':
+      return state+action.num;
+    default:
+      return state;
+  }
+}
+
+const AgeContextProvider = (props) => {
+  const [age,dispatch] = useReducer(ageReducer,20)
+  return(
+    <AgeContext.Provider value={age,addFiveToAge,addTenToAge}>
+      {props.children}
+    </AgeContext.Provider>
+  )
+}
+
+-------------------------------
+how to use
+dispatch({type:'ADD_FIVE'})
+dispatch({type:'ADD_NUM',num:20})
+
+
