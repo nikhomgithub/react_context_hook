@@ -9,6 +9,21 @@ const NewForm = () => {
     const ref1=useRef();
     const ref2=useRef();
     const ref3=useRef();
+    
+    /*
+    const [formState,setFormState]=useState({
+        name:'',
+        lastname:'',
+        id:''
+    })
+    
+     const onChange=(e)=>{
+        const name=e.target.name;
+        setFormState(
+            formState[name]:e.target.value
+        ) 
+    }
+    */
 
     useEffect(()=>{
         ref1.current.focus();
@@ -49,9 +64,9 @@ const NewForm = () => {
     return ( 
         <div>
             <h1>{`name : ${name}  /lastname : ${lastname}  /id:${id}`}</h1>
-            <Input ref={ref1} type="text" onKeyDown = {clickRef1} placeholder={"name"} onChange={onChangeRef1} value={name}/>
-            <Input ref={ref2} type="text" onKeyDown = {clickRef2} placeholder={"lastname"} onChange={onChangeRef2} value={lastname}/>
-            <Input ref={ref3} type="text" onKeyDown = {clickRef3} placeholder={"id"} onChange={onChangeRef3} value={id}/>
+            <Input ref={ref1} type="text" onKeyDown = {clickRef1} placeholder={"name"} onChange={onChangeRef1} value={name} name="name"/>
+            <Input ref={ref2} type="text" onKeyDown = {clickRef2} placeholder={"lastname"} onChange={onChangeRef2} value={lastname} name="lastname"/>
+            <Input ref={ref3} type="text" onKeyDown = {clickRef3} placeholder={"id"} onChange={onChangeRef3} value={id} name="id"/>
        </div>
      );
 }
